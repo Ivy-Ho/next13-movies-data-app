@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Movie from '../movie'
+// import Movie from '../movie'
 
 // export async function generateStaticParams() {
 //   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
@@ -16,8 +16,8 @@ export default async function MovieDetails({ params }) {
   const data = await fetch(`https://api.themoviedb.org/3/movie/${movie}?api_key=${process.env.API_KEY}`)
   const res = await data.json()
 
-  const similarMovieData = await fetch(`https://api.themoviedb.org/3/movie/${movie}/similar?api_key=${process.env.API_KEY}`)
-  const similarRes = await similarMovieData.json()
+  // const similarMovieData = await fetch(`https://api.themoviedb.org/3/movie/${movie}/similar?api_key=${process.env.API_KEY}`)
+  // const similarRes = await similarMovieData.json()
 
   return (
     <div>
@@ -36,7 +36,7 @@ export default async function MovieDetails({ params }) {
         />
         <p>{res.overview}</p>
       </section>
-      <section>
+      {/* <section>
         <h3 className="text-2xl font-medium mt-8 mb-6">You may also like :</h3>
         <div className="grid gap-16 grid-cols-fluid">
           {similarRes.results.map((movie) => (
@@ -49,7 +49,7 @@ export default async function MovieDetails({ params }) {
             />
           ))}
         </div>
-      </section>
+      </section> */}
 
     </div>
   )
