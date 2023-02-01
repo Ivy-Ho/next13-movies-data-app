@@ -1,13 +1,13 @@
 import Image from "next/image"
 import Movie from '../movie'
 
-export async function generateStaticParams() {
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-  const res = await data.json()
-  return res.results.map((movie) => ({
-    movie: toString(movie.id),
-  }))
-}
+// export async function generateStaticParams() {
+//   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+//   const res = await data.json()
+//   return res.results.map((movie) => ({
+//     movie: toString(movie.id),
+//   }))
+// }
 
 export default async function MovieDetails({ params }) {
   const { movie } = params
@@ -28,6 +28,7 @@ export default async function MovieDetails({ params }) {
         {res.homepage && <h2>Homepage: <a href={res.homepage} target="_blank">{res.homepage}</a> minutes</h2>}
         <Image
           className="my-12 w-full"
+          alt={res.title}
           src={imagePath + res.backdrop_path}
           width={1000}
           height={1000}
