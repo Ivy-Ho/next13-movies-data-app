@@ -1,13 +1,15 @@
-import Movie from "../../movie"
-import Pagination from "../../pagination"
+import Movie from "../movie"
+// import Pagination from "./../../pagination"
 
-export default async function Popular({ params }) {
+
+export default async function TopRated({ params }) {
   const { page } = params
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=${page}`)
+  const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&page=${page}`)
   const res = await data.json()
+
   return (
     <main>
-      <h1 className="text-2xl text-center font-medium mb-6">Popular Movies</h1>
+      <h1 className="text-2xl text-center font-medium mb-6">Top Rated Movies</h1>
       <div className="grid gap-16 grid-cols-fluid">
         {res.results.map((movie) => (
           <Movie
@@ -20,10 +22,10 @@ export default async function Popular({ params }) {
           />
         ))}
       </div>
-      <Pagination
-        cate="popular"
+      {/* <Pagination
+        cate="topRated"
         current_page={page}
-      />
+      /> */}
     </main>
   )
 }

@@ -4,16 +4,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { BsFillMoonStarsFill } from "react-icons/bs";
-import { BsSunFill } from "react-icons/bs";
-import { MdLocalMovies } from "react-icons/md";
+// import { BsSunFill } from "react-icons/bs";
+// import { MdLocalMovies } from "react-icons/md";
 import { SiDatadog } from "react-icons/si";
 
 
 
 const links = [
   { href: "/", text: "Home" },
-  { href: "/popular/1", text: "Popular" },
-  { href: "/topRated/1", text: "Top Rated" },
+  { href: "/popular", text: "Popular" },
+  { href: "/topRated", text: "Top Rated" },
 ];
 
 export const Navbar = ({ darkMode, setDarkMode }) => {
