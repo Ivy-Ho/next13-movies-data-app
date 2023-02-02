@@ -1,14 +1,14 @@
 import Image from "next/image"
 // import Movie from '../movie'
-import Swiper from '../movieSwiper'
+import MovieSwiper from '../movieSwiper'
 
-export async function generateStaticParams() {
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-  const res = await data.json()
-  return res.results.map((movie) => ({
-    movie: toString(movie.id),
-  }))
-}
+// export async function generateStaticParams() {
+//   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+//   const res = await data.json()
+//   return res.results.map((movie) => ({
+//     movie: toString(movie.id),
+//   }))
+// }
 
 export default async function MovieDetails({ params }) {
   const { movie } = params
@@ -40,7 +40,7 @@ export default async function MovieDetails({ params }) {
       <section>
         <h3 className="text-2xl font-medium mt-8 mb-6">You may also like :</h3>
 
-        <Swiper similarRes={similarRes} />
+        <MovieSwiper similarRes={similarRes} />
       </section>
 
     </div>
