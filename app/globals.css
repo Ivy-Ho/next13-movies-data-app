@@ -16,3 +16,73 @@ a {
 * {
   box-sizing: border-box;
 }
+
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-bottom: 50px;
+  overflow: hidden;
+  position: relative;
+  padding: 0 72px;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: #CA8A04;
+  border-radius: 50%;
+  scale: 1;
+  color: white;
+}
+
+.swiper-button-prev {
+  left: 5px;
+}
+.swiper-button-prev::after {
+  content:"prev"
+}
+
+.swiper-button-next {
+  right: 5px;
+}
+.swiper-button-next::after {
+  content:"next"
+}
