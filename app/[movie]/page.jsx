@@ -1,6 +1,6 @@
 import Image from "next/image"
 // import Movie from '../movie'
-import MovieSwiper from '../movieSwiper'
+// import MovieSwiper from '../movieSwiper'
 
 // export async function generateStaticParams() {
 //   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
@@ -37,11 +37,11 @@ export default async function MovieDetails({ params }) {
         />
         <p className="text-lg">{res.overview}</p>
       </section>
-      <section>
+      {/* <section>
         <h3 className="text-2xl font-medium mt-8 mb-6">You may also like :</h3>
 
         <MovieSwiper similarRes={similarRes} />
-      </section>
+      </section> */}
 
     </div>
   )
