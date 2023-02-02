@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
 
       <body className={`${darkMode ? "dark" : ""
         }`}>
-        <div className={`${montserrat.className} px-4 lg:px-32 py-6 md:py-12 min-h-full dark:bg-black dark:text-white transition-colors ease-in-out duration-300 font-monsterrat`}>
+        <div className={`${montserrat.className} px-4 lg:px-32 py-6 md:py-12 min-h-full bg-slate-100 dark:bg-black text-gray-600 dark:text-white transition-colors ease-in-out duration-300 font-monsterrat`}>
           <Navbar
             darkMode={darkMode}
             setDarkMode={setDarkMode}

@@ -8,9 +8,9 @@ export default async function Home() {
   const upComingRes = await upComingData.json()
   return (
     <main>
-      <section className="mb-10">
-        <h1 className="text-2xl text-center font-medium mb-6">Now Playing Movies</h1>
-        <div className="grid gap-16 grid-cols-fluid">
+      <section className="mb-16">
+        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Now Playing Movies</h2>
+        <div className="grid gap-16 grid-cols-fluid px-6">
           {res.results.map((movie) => (
             <Movie
               key={movie.id}
@@ -23,8 +23,8 @@ export default async function Home() {
         </div>
       </section>
       <section>
-        <h1 className="text-2xl text-center font-medium mb-6">Upcoming Movies</h1>
-        <div className="grid gap-16 grid-cols-fluid">
+        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Upcoming Movies</h2>
+        <div className="grid gap-16 grid-cols-fluid px-6">
           {upComingRes.results.map((movie) => (
             <Movie
               key={movie.id}

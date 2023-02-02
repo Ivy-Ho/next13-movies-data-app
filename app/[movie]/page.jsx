@@ -1,5 +1,4 @@
 import Image from "next/image"
-// import Movie from '../movie'
 // import MovieSwiper from '../movieSwiper'
 
 // export async function generateStaticParams() {
@@ -22,13 +21,13 @@ export default async function MovieDetails({ params }) {
 
   return (
     <div>
-      <section className="mb-5">
+      <section className="mb-10">
         <h2 className="text-4xl leading-normal">{res.title}</h2>
         <h2 className="text-2xl">{res.release_date}</h2>
         <h2 className="text-lg">Runtime: {res.runtime} minutes</h2>
         {res.homepage && <h2 className="text-base">Homepage: <a href={res.homepage} target="_blank">{res.homepage}</a> minutes</h2>}
         <Image
-          className="my-12 w-full"
+          className="my-12 w-full rounded"
           alt={res.title}
           src={imagePath + res.backdrop_path}
           width={1000}
@@ -38,8 +37,7 @@ export default async function MovieDetails({ params }) {
         <p className="text-lg">{res.overview}</p>
       </section>
       {/* <section>
-        <h3 className="text-2xl font-medium mt-8 mb-6">You may also like :</h3>
-
+        <h3 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">You may also like :</h3>
         <MovieSwiper similarRes={similarRes} />
       </section> */}
 

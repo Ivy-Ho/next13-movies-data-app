@@ -27,7 +27,7 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
             href="/"
           >
             <SiDatadog className="cursor-pointer text-5xl font-semibold mr-2" />
-            <span className="self-center text-lg md:text-xl font-semibold whitespace-nowrap dark:text-white">Doggie Loves Movie</span>
+            <span className="self-center text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap dark:text-white">Doggie Loves Movie</span>
           </Link>
 
           <button type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={() => setMenuShow(!menuShow)}
@@ -37,13 +37,13 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
             </svg>
           </button>
           <div className={`${menuShow ? "block" : "hidden"} w-full md:block md:w-auto`} id="navbar-solid-bg">
-            <ul className="flex flex-col mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+            <ul className="flex flex-col items-center mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
               {links.map((link) => (
-                <li className="pr-2 md:pr-[2.5rem]" key={link.href}>
+                <li key={link.href}>
                   <div>
                     <Link
-                      className={`${link.href === path ? "text-yellow-600 font-bold" : ""
-                        } hover:text-yellow-600 hover:font-bold block text-lg py-2 pl-3 pr-4 rounded md:border-0 md:p-0`}
+                      className={`${link.href === path ? "text-yellow-600 font-bold" : "text-gray-600 dark:text-white"
+                        } hover:text-yellow-600 block text-lg py-2 pl-3 pr-4 rounded`}
                       href={link.href}
                       onClick={() => setMenuShow(false)}
                     >

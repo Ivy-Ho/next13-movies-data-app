@@ -7,8 +7,8 @@ export default async function Popular({ params }) {
   const res = await data.json()
   return (
     <main>
-      <h1 className="text-2xl text-center font-medium mb-6">Popular Movies</h1>
-      <div className="grid gap-16 grid-cols-fluid">
+      <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Popular Movies</h2>
+      <div className="grid gap-16 grid-cols-fluid px-6">
         {res.results.map((movie) => (
           <Movie
             key={movie.id}
