@@ -1,15 +1,17 @@
 import Movie from "../movie"
 // import Pagination from "../../pagination"
+import { getMovies } from "../../lib/get-movies";
+
 
 export default async function Popular({ params }) {
   const { page } = params
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&page=${page}`)
-  const res = await data.json()
+  const popularRes = await getMovies("popular", false, page);
+
   return (
     <main>
       <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Popular Movies</h2>
       <div className="grid gap-16 grid-cols-fluid px-6">
-        {res.results.map((movie) => (
+        {popularRes.results.map((movie) => (
           <Movie
             key={movie.id}
             id={movie.id}

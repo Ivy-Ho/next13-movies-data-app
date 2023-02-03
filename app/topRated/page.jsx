@@ -1,17 +1,18 @@
 import Movie from "../movie"
 // import Pagination from "./../../pagination"
+import { getMovies } from "../../lib/get-movies";
+
 
 
 export default async function TopRated({ params }) {
   const { page } = params
-  const data = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.API_KEY}&page=${page}`)
-  const res = await data.json()
+  const topRatedRes = await getMovies("top_rated", false, page);
 
   return (
     <main>
       <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Top Rated Movies</h2>
       <div className="grid gap-16 grid-cols-fluid px-6">
-        {res.results.map((movie) => (
+        {topRatedRes.results.map((movie) => (
           <Movie
             key={movie.id}
             id={movie.id}
