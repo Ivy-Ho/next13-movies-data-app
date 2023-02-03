@@ -19,15 +19,15 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
   const [menuShow, setMenuShow] = useState(false);
 
   return (
-    <div className="mx-auto">
-      <nav className="py-3 rounded mb-8">
-        <div className="container flex flex-wrap items-center justify-between mx-auto">
+    <div className="mx-auto sticky top-0 bg-slate-200 dark:bg-slate-800 opacity-95">
+      <nav className="px-4 py-5 rounded mb-8">
+        <div className="container flex flex-wrap items-center mx-auto">
           <Link
-            className="flex items-center text-lg md:text-3xl text-yellow-600 font-bold"
+            className="flex items-center text-lg md:text-3xl text-yellow-600 font-bold mr-auto -order-1"
             href="/"
           >
             <SiDatadog className="cursor-pointer text-5xl font-semibold mr-2" />
-            <span className="self-center text-xl md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap dark:text-white">Doggie Loves Movie</span>
+            <span className="self-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap dark:text-white">Doggie Loves Movie</span>
           </Link>
 
           <button type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={() => setMenuShow(!menuShow)}
@@ -37,7 +37,7 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
             </svg>
           </button>
           <div className={`${menuShow ? "block" : "hidden"} w-full md:block md:w-auto`} id="navbar-solid-bg">
-            <ul className="flex flex-col items-center mt-4 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
+            <ul className="flex flex-col items-center mt-4 rounded-lg bg-gray-50 dark:bg-slate-600 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
               {links.map((link) => (
                 <li key={link.href}>
                   <div>
@@ -52,14 +52,12 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
                   </div>
                 </li>
               ))}
-              <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className="hidden md:block cursor-pointer text-2xl hover:text-yellow-600"
-                />
-              </li>
             </ul>
           </div>
+          <BsFillMoonStarsFill
+            onClick={() => setDarkMode(!darkMode)}
+            className="md:block cursor-pointer text-2xl hover:text-yellow-600 ml-4 -order-1 md:order-last"
+          />
         </div>
       </nav>
     </div>

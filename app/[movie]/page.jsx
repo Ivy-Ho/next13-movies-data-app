@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { BsLink45Deg } from "react-icons/bs";
 // import MovieSwiper from '../movieSwiper'
 
 // export async function generateStaticParams() {
@@ -22,10 +23,12 @@ export default async function MovieDetails({ params }) {
   return (
     <div>
       <section className="mb-10">
-        <h2 className="text-4xl leading-normal">{res.title}</h2>
-        <h2 className="text-2xl">{res.release_date}</h2>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl mb-2">{res.title}</h2>
+        <h2 className="text-xl md:text-2xl">{res.release_date}</h2>
         <h2 className="text-lg">Runtime: {res.runtime} minutes</h2>
-        {res.homepage && <h2 className="text-base">Homepage: <a href={res.homepage} target="_blank">{res.homepage}</a> minutes</h2>}
+        {res.homepage &&
+          <a href={res.homepage} target="_blank" className="text-base flex items-center hover:text-yellow-600 text-base"><span>Homepage</span><BsLink45Deg /></a>
+        }
         <Image
           className="my-12 w-full rounded"
           alt={res.title}
