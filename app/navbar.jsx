@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BsFillMoonStarsFill } from "react-icons/bs";
+import { FaTape } from "react-icons/fa";
 // import { BsSunFill } from "react-icons/bs";
 // import { MdLocalMovies } from "react-icons/md";
 import { SiDatadog } from "react-icons/si";
@@ -26,8 +27,8 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
             className="flex items-center text-lg md:text-3xl text-yellow-600 font-bold mr-auto -order-1"
             href="/"
           >
-            <SiDatadog className="cursor-pointer text-5xl font-semibold mr-2" />
-            <span className="self-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap dark:text-white">Doggie Loves Movie</span>
+            <FaTape className="cursor-pointer text-5xl font-semibold mr-2" />
+            <span className="self-center text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold whitespace-nowrap dark:text-white">Movie Scrapbook</span>
           </Link>
 
           <button type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" onClick={() => setMenuShow(!menuShow)}
