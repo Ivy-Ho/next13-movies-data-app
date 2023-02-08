@@ -1,22 +1,22 @@
 import Image from "next/image"
 import { BsLink45Deg } from "react-icons/bs";
 import { getMovies } from "../../lib/get-movies";
-import MovieSwiper from '../movieSwiper'
+// import MovieSwiper from '../movieSwiper'
 
-export async function generateStaticParams() {
-  const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
-  const res = await data.json()
-  return res.results.map((movie) => ({
-    movie: toString(movie.id),
-  }))
-}
+// export async function generateStaticParams() {
+//   const data = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}`)
+//   const res = await data.json()
+//   return res.results.map((movie) => ({
+//     movie: toString(movie.id),
+//   }))
+// }
 
 export default async function MovieDetails({ params }) {
   const { movie } = params
   const imagePath = 'https://image.tmdb.org/t/p/original'
   const singleRes = await getMovies(movie, false);
-  let similarParamStr = movie + "/similar";
-  const similarRes = await getMovies(similarParamStr, false);
+  // let similarParamStr = movie + "/similar";
+  // const similarRes = await getMovies(similarParamStr, false);
 
   return (
     <div>
@@ -37,10 +37,10 @@ export default async function MovieDetails({ params }) {
         />
         <p className="text-lg">{singleRes.overview}</p>
       </section>
-      <section>
+      {/* <section>
         <h3 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">You may also like :</h3>
-        {similarRes && <MovieSwiper similarRes={similarRes} />}
-      </section>
+        <MovieSwiper similarRes={similarRes} />
+      </section> */}
 
     </div>
   )
