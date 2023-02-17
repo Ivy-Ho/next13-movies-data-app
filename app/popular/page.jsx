@@ -2,7 +2,6 @@ import Movie from "../movie"
 // import Pagination from "../../pagination"
 import { getMovies } from "../../lib/get-movies";
 
-
 export default async function Popular({ params }) {
   const { page } = params
   const popularRes = await getMovies("popular", false, page);
