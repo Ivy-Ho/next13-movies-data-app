@@ -20,7 +20,7 @@ export const Navbar = ({ darkMode, setDarkMode }) => {
   const [menuShow, setMenuShow] = useState(false);
 
   return (
-    <div className="mx-auto sticky top-0 bg-slate-200 dark:bg-slate-800 opacity-95">
+    <div className="z-20 mx-auto sticky top-0 bg-slate-200 dark:bg-slate-800 opacity-95">
       <nav className="px-4 py-5 rounded mb-8">
         <div className="container flex flex-wrap items-center mx-auto">
           <Link

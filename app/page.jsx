@@ -9,7 +9,7 @@ export default async function Home() {
   return (
     <main>
       <section className="mb-16">
-        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Now Playing Movies</h2>
+        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Now Playing Movies<span class="text-sm ml-2">(TW)</span></h2>
         <div className="grid gap-16 grid-cols-fluid px-6">
           {nowPlayingRes.results.map((movie) => (
             <Movie
@@ -23,7 +23,7 @@ export default async function Home() {
         </div>
       </section>
       <section>
-        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Upcoming Movies</h2>
+        <h2 className="text-2xl font-medium mb-10 border-l-4 border-yellow-600 pl-2 dark:text-white">Coming soon to theaters<span class="text-sm ml-2">(TW)</span></h2>
         <div className="grid gap-16 grid-cols-fluid px-6">
           {upComingRes.results.map((movie) => (
             <Movie
