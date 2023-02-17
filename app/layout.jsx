@@ -4,7 +4,7 @@ import './globals.css'
 import { Montserrat } from "@next/font/google"
 import { Navbar } from "./navbar";
 import { useState } from "react";
-
+import { ScrollToTop } from './ScrollToTop';
 
 const montserrat = Montserrat({
   weight: ['400', '700'],
@@ -24,6 +24,8 @@ export default function RootLayout({ children }) {
 
       <body className={`${darkMode ? "dark" : ""
         }`}>
+        {/* <ScrollToTop /> */}
+        <ScrollToTop />
         <div className={`${montserrat.className} pb-6 md:pb-12 min-h-full bg-slate-100 dark:bg-black text-gray-600 dark:text-white transition-colors ease-in-out duration-300 font-monsterrat`}>
           <Navbar
             darkMode={darkMode}
